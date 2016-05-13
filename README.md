@@ -47,26 +47,3 @@
     <th>获取表的信息</th>
   </tr>
 </table>
-
-###测试用例
-######	insertTableInfo向表中插入数据
-
-@Test
-    public void insertDataTable() {
-	Object obj = "[{\"name\":\"z\",\"age\":\"12\"},{\"name\":\"z\",\"age\":\"12\"},{\"name\":\"z\",\"age\":\"12\"}]";
-	String res = restTemplate.postForObject(baseUri + "/data/test/zae/_add", obj, String.class);
-	assertThat(res, containsString("OK"));// 添加表数据，没有ok，测试错误。
-    }
--------------
-  
-  	@Test
-  	public void insertDataTable() {
-		Object obj = "[{\"name\":\"z\",\"age\":\"12\"},{\"name\":\"z\",\"age\":\"12\"},{\"name\":\"z\",\"age\":\"12\"}]";
-		String res = restTemplate.postForObject(baseUri + "/data/test/zae12/_add", obj, String.class);
-		assertThat(res, containsString("OK"));// 添加表数据，没有ok，测试错误。
-	}
-------------
-
- 
-
-
